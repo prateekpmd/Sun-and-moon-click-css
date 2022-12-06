@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+body{
+    background: #000;
+}
+
+.button-box{
+    height: 250px;
+    width: 240px;
+    background: #e91963;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.sun{
+    height: 100px;
+    width: 100px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    border: 5px solid #e91963;
+   
+}
+
+.sun div{
+    height: 3px;
+    background:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transition: width 0.5s;
+
+}
+
+.sun .line-1{
+     width: 160px;
+    transform: translate(-50%,-50%);
+}
+.sun .line-2{
+     width: 160px;
+    transform: translate(-50%,-50%) rotate(90deg);
+}
+.sun .line-3{
+     width: 160px;
+    transform: translate(-50%,-50%)rotate(45deg);
+}
+.sun .line-4{
+     width: 160px;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.sun::after{
+    content: "";
+     height: 100px;
+    width: 100px;
+    background:black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    background: #e91963;
+    top: -100px;
+    right:-100px;
+     transition: all  0.5s;
+   
+}
+
+.sun.night::after{
+    top: -25px;
+    right:-25px;
+}
+
+.sun.night div{
+    width: 0px;
+}
